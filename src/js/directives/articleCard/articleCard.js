@@ -8,6 +8,7 @@
                 layout: "="
             },
             controllerAs: 'articleCardVm',
+            // templateUrl: 'dist/partials/articleCard.html',
             templateUrl: 'src/js/directives/articleCard/articleCard.html',
             controller: ['$scope', 'searchService', function($scope, searchService) {
                 var articleCardVm = this;

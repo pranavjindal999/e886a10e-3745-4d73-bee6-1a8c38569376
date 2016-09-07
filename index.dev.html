@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="src/css/main.css">
     <script type="text/javascript" src="src/js/library/angular.js"></script>
     <script type="text/javascript" src="src/js/library/angular-ui-router.js"></script>
+    <script type="text/javascript" src="src/js/library/angular-scroll.js"></script>
+    <script type="text/javascript" src="src/js/library/waves.js"></script>
     <script type="text/javascript" src="src/js/app.config.js"></script>
     <script type="text/javascript" src="src/js/directives/articleCard/articleCard.js"></script>
     <script type="text/javascript" src="src/js/services/searchService.js"></script>
@@ -20,13 +22,54 @@
 <body ng-controller="indexController as indexVm">
     <header>
         <div class="desktop-centered">
-            <img class="brand-logo" src="src/images/logo.svg">
+            <img ui-sref="article({articleId:''})" class="brand-logo pointer" src="images/logo.svg">
+            <div ng-click="indexVm.toggleMenu()"  class="hambuger hide-on-med-and-up">&#9776;</div>
+            <nav ng-class="indexVm.menuClass">
+            	<ul>
+            		<li class="active">
+            			Home
+            		</li>
+            		<li>
+            			Gridusk
+            		</li>
+            		<li>
+            			Regulskh
+            		</li>
+            		<li>
+            			Wejshukl
+            		</li>
+            		<li>
+            			Sugmkilg
+            		</li>
+            	</ul>
+            </nav>
         </div>
     </header>
     <main>
         <ui-view></ui-view>
     </main>
     <footer>
+    	<div class="row desktop-centered">
+    		<div class="col s4 m4 l4 center">
+    			<a class="bold white-text font-size-130">About Us</a><br>
+    			<a class="font-size-80">Teslera</a><br>
+    			<a class="font-size-80">Serialha hiag</a><br>
+    			<a class="font-size-80">Hugasgan</a><br>
+    		</div>
+    		<div class="col s4 m4 l4 center">
+				<a class="bold white-text font-size-130">Legal</a> <br>
+				<a class="font-size-80">Teslera guts</a><br>
+    			<a class="font-size-80">Serialha hiag</a><br>
+    			<a class="font-size-80">Hugasgan</a><br>		
+    			<a class="font-size-80">Serialha hiag</a><br>	
+    		</div>
+    		<div class="col s4 m4 l4 center">
+    			<a class="bold white-text font-size-130">Developers</a><br>
+    			<a class="font-size-80">Teslera</a><br>
+    			<a class="font-size-80">Serialha hiag</a><br>
+    			<a class="font-size-80">Hugasgan</a><br>
+    		</div>
+    	</div>
     </footer>
 </body>
 

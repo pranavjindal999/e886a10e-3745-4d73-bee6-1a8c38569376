@@ -9,13 +9,11 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'dist/js/_temp/services.min.js': 'src/js/services/**/*.js',
-                    'dist/js/_temp/controllers.min.js': 'src/js/modules/**/*.js',
+                    'dist/js/_temp/controllers.min.js': ['src/js/modules/**/*.js','src/js/indexController.js'],
                     'dist/js/_temp/directives.min.js': 'src/js/directives/**/*.js',
-                    'dist/js/_temp/libs.min.js': ['src/js/library/angular.js', 'src/js/library/angular-ui-router.js', 'src/js/library/angular-scroll.js', 'src/js/library/angular-touch.js', 'src/js/library/waves.js', 'src/js/library/moment.js', 'src/js/library/moment-duration-format.js', 'src/js/library/nprogress.js', 'src/js/library/Autolinker.js'],
-                    'dist/js/_temp/app.config.min.js': ['src/js/prodKey.js','src/js/app.config.js', 'src/js/app.config.prod.js', 'src/js/gapi.js'],
-                    'dist/js/iframeAPI.js' : 'src/js/library/iframeAPI.js',
-                    'dist/js/www-widgetapi.js' : 'src/js/library/www-widgetapi.js',
-                    'dist/js/youtube.min.js': ['dist/js/_temp/libs.min.js', 'dist/js/_temp/app.config.min.js', 'dist/js/_temp/directives.min.js', 'dist/js/_temp/services.min.js', 'dist/js/_temp/controllers.min.js']
+                    'dist/js/_temp/libs.min.js': ['src/js/library/angular.js', 'src/js/library/angular-ui-router.js', 'src/js/library/angular-scroll.js', 'src/js/library/waves.js'],
+                    'dist/js/_temp/app.config.min.js': ['src/js/app.config.js', 'src/js/app.config.prod.js'],
+                    'dist/js/app.min.js': ['dist/js/_temp/libs.min.js', 'dist/js/_temp/app.config.min.js', 'dist/js/_temp/directives.min.js', 'dist/js/_temp/services.min.js', 'dist/js/_temp/controllers.min.js']
                 }
             }
         },
@@ -32,8 +30,8 @@ module.exports = function(grunt) {
         purifycss: {
             options: {},
             target: {
-                src: ['dist/js/youtube.min.js', 'src/**/*.html'],
-                css: ['src/css/materialize.css', 'src/css/icons.css', 'src/css/nprogress.css', 'src/css/main.css'],
+                src: ['dist/js/app.min.js', 'src/**/*.html','index.html'],
+                css: ['src/css/materialize.css', 'src/css/main.css'],
                 dest: 'dist/css/style.purified.css'
             },
         },
